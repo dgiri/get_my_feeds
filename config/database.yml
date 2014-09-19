@@ -1,0 +1,17 @@
+development: &DEFAULTS
+    adapter: postgresql
+    encoding: utf8
+    reconnect: false
+    database: get_my_feeds_development
+    host: localhost
+    username: tiatrosdev
+    min_messages: WARNING
+    template: template0
+    port: 5432
+
+test: &test
+  <<: *DEFAULTS
+  database: get_my_feeds_test
+
+cucumber:
+  <<: *test
